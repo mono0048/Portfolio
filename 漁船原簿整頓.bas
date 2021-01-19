@@ -1,30 +1,30 @@
-Attribute VB_Name = "‹™‘DŒ´•ë®“Ú"
+Attribute VB_Name = "æ¼èˆ¹åŸç°¿æ•´é “"
 Option Explicit
 
-Sub ‹™‘DŒ´•ëƒV[ƒg–¼æ“¾()
+Sub æ¼èˆ¹åŸç°¿ã‚·ãƒ¼ãƒˆåå–å¾—()
 '**********
 '2020/10/08
-'X
-'Œœ”O–€
-'‚Ç‚Á‚©‚Ì€–Ú‚ª–¢‹L“ü‚Ìê‡A‘S‘Ìƒy[ƒW‚ª•ö‚ê‚é‚©‚à
-'Šeƒy[ƒW‚É‰e‹¿‚Í–³‚¢
-'’Šo‚µ‚½‚­‚È‚¢ƒV[ƒg‚ª‚ ‚éê‡A‚Ç‚¤‚µ‚æ‚¤‚©
+'æ£®
+'æ‡¸å¿µäº‹é …
+'ã©ã£ã‹ã®é …ç›®ãŒæœªè¨˜å…¥ã®å ´åˆã€å…¨ä½“ãƒšãƒ¼ã‚¸ãŒå´©ã‚Œã‚‹ã‹ã‚‚
+'å„ãƒšãƒ¼ã‚¸ã«å½±éŸ¿ã¯ç„¡ã„
+'æŠ½å‡ºã—ãŸããªã„ã‚·ãƒ¼ãƒˆãŒã‚ã‚‹å ´åˆã€ã©ã†ã—ã‚ˆã†ã‹
 '**********
 Dim mysheet As Worksheet
     Application.ScreenUpdating = False
     On Error Resume Next
     With ThisWorkbook
         For Each mysheet In .Worksheets
-            If InStr(mysheet.Name, "ˆê——•\") = 0 Then
+            If InStr(mysheet.Name, "ä¸€è¦§è¡¨") = 0 Then
                 mysheet.Name = mysheet.Range("C3").Text
             End If
         Next
     End With
-    Call ƒV[ƒg–ÚŸ
+    Call ã‚·ãƒ¼ãƒˆç›®æ¬¡
     Application.ScreenUpdating = True
 End Sub
 
-Sub ƒV[ƒg–ÚŸ()
+Sub ã‚·ãƒ¼ãƒˆç›®æ¬¡()
   
 Dim h, i, j, k As Integer
 Dim iRow As Integer
@@ -34,39 +34,39 @@ Dim Senmei, Kumiaiinmei, Chiku, Tonsu, Nagasa, Bariki, Kennin As String
 Dim Sh1 As Worksheet
 Dim LastRow As Long
     
-    Set Sh1 = Worksheets("ˆê——•\")
+    Set Sh1 = Worksheets("ä¸€è¦§è¡¨")
     Sh1.Range("A1").Select
-    '–ÚŸƒV[ƒg‚Ìİ’è“à—e‚ğƒNƒŠƒA
+    'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®è¨­å®šå†…å®¹ã‚’ã‚¯ãƒªã‚¢
     LastRow = Sh1.Cells(Rows.Count, 2).End(xlUp).Row
     Sh1.Range(Sh1.Cells(4, 2), Sh1.Cells(LastRow, 9)).ClearContents
     Sh1.Range(Sh1.Cells(4, 2), Sh1.Cells(LastRow, 9)).Hyperlinks.Delete
-    '–ÚŸŠJns”i–{—á‚Í4s–Ú‚©‚ç–ÚŸ‚ªì‚ç‚ê‚éj
+    'ç›®æ¬¡é–‹å§‹è¡Œæ•°ï¼ˆæœ¬ä¾‹ã¯4è¡Œç›®ã‹ã‚‰ç›®æ¬¡ãŒä½œã‚‰ã‚Œã‚‹ï¼‰
     iRow = 4
-    '–ÚŸ‚ğì¬‚·‚é—ñ”i–{—á‚Í2—ñ–ÚiB—ñj‚É–ÚŸ‚ªì‚ç‚ê‚éj
+    'ç›®æ¬¡ã‚’ä½œæˆã™ã‚‹åˆ—æ•°ï¼ˆæœ¬ä¾‹ã¯2åˆ—ç›®ï¼ˆBåˆ—ï¼‰ã«ç›®æ¬¡ãŒä½œã‚‰ã‚Œã‚‹ï¼‰
     iColumn = 2
     On Error Resume Next
     With ThisWorkbook
-        'ƒ[ƒNƒV[ƒg‚Ì”•ªA‰º‹Lˆ—‚ğŒJ‚è•Ô‚·
+        'ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã®æ•°åˆ†ã€ä¸‹è¨˜å‡¦ç†ã‚’ç¹°ã‚Šè¿”ã™
         For i = 2 To Worksheets.Count Step 1
-            '”ñ•\¦‚Æ‚È‚Á‚Ä‚¢‚éƒ[ƒNƒV[ƒg‚Í–ÚŸì¬‘ÎÛŠO‚Æ‚·‚é
+            'éè¡¨ç¤ºã¨ãªã£ã¦ã„ã‚‹ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã¯ç›®æ¬¡ä½œæˆå¯¾è±¡å¤–ã¨ã™ã‚‹
             If .Worksheets(i).Visible = xlSheetVisible Then
-                '‘g‡ˆõ•ÊŠ—L‘Dƒtƒ@ƒCƒ‹‚Ö‚ÌƒnƒCƒp[ƒŠƒ“ƒN‚ğİ’u
+                'çµ„åˆå“¡åˆ¥æ‰€æœ‰èˆ¹ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®ãƒã‚¤ãƒ‘ãƒ¼ãƒªãƒ³ã‚¯ã‚’è¨­ç½®
                 For h = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(6, h).Value = "" Then
                         Kumimei = "'" & .Worksheets(i).Cells(6, h).Text & "'"
-                        .Worksheets(i).Hyperlinks.Add Anchor:=.Worksheets(i).Cells(6, h), Address:="\\192.168.10.252\share\ƒf[ƒ^•ÛŠÇ(“ŒRj\ƒeƒXƒg\‘g‡ˆõ•ÊŠ—L‘D.xlsm", SubAddress:=Kumimei & "!A1", TextToDisplay:=.Worksheets(i).Cells(6, h).Text, ScreenTip:=.Worksheets(i).Cells(6, h).Text
+                        .Worksheets(i).Hyperlinks.Add Anchor:=.Worksheets(i).Cells(6, h), Address:="\\çµ„åˆå“¡åˆ¥æ‰€æœ‰èˆ¹.xlsm", SubAddress:=Kumimei & "!A1", TextToDisplay:=.Worksheets(i).Cells(6, h).Text, ScreenTip:=.Worksheets(i).Cells(6, h).Text
 '                        GoTo EndLoop0
                     End If
                 Next
 EndLoop0:
-                'ƒ[ƒNƒV[ƒg–¼‚ğŠi”[
+                'ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆåã‚’æ ¼ç´
                 sName = "'" & .Worksheets(i).Name & "'"
-                '–ÚŸƒV[ƒg‚Ì‘ÎÛƒZƒ‹‚ÉƒnƒCƒp[ƒŠƒ“ƒN‚ğİ’èi–ÚŸì¬‘ÎÛƒ[ƒNƒV[ƒg‚ÌA1ƒZƒ‹‚Ö‚ÌƒŠƒ“ƒN
+                'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®å¯¾è±¡ã‚»ãƒ«ã«ãƒã‚¤ãƒ‘ãƒ¼ãƒªãƒ³ã‚¯ã‚’è¨­å®šï¼ˆç›®æ¬¡ä½œæˆå¯¾è±¡ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã®A1ã‚»ãƒ«ã¸ã®ãƒªãƒ³ã‚¯
                 Sh1.Hyperlinks.Add Anchor:=Sh1.Cells(iRow, iColumn), Address:="", SubAddress:=sName & "!A1", TextToDisplay:=.Worksheets(i).Cells(3, 3).Text, ScreenTip:=.Worksheets(i).Cells(3, 3).Text
-                '–ÚŸƒV[ƒg‚Ì‘ÎÛƒZƒ‹‚ÉƒV[ƒg–¼‚ğİ’è
+                'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®å¯¾è±¡ã‚»ãƒ«ã«ã‚·ãƒ¼ãƒˆåã‚’è¨­å®š
                 Sh1.Cells(iRow, iColumn) = .Worksheets(i).Cells(3, 3).Text
-                '‘S‘ÌƒV[ƒg‚ÉZŠA¶”NŒ“úA’n‹æ–¼Ao‘‹à‚ğ“]‹L
-                '‘D–¼”»’è
+                'å…¨ä½“ã‚·ãƒ¼ãƒˆã«ä½æ‰€ã€ç”Ÿå¹´æœˆæ—¥ã€åœ°åŒºåã€å‡ºè³‡é‡‘ã‚’è»¢è¨˜
+                'èˆ¹ååˆ¤å®š
                 For j = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(5, j).Value = "" Then
                         Senmei = .Worksheets(i).Cells(5, j).Value
@@ -76,7 +76,7 @@ EndLoop0:
                     'GoTo EndLoop
                 Next
 EndLoop1:
-                '‘g‡ˆõ–¼”»’è
+                'çµ„åˆå“¡ååˆ¤å®š
                 For j = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(6, j).Value = "" Then
                         Kumiaiinmei = .Worksheets(i).Cells(6, j).Value
@@ -86,9 +86,9 @@ EndLoop1:
                     'GoTo EndLoop
                 Next
 EndLoop2:
-                '’n‹æ
+                'åœ°åŒº
                 Sh1.Cells(iRow, iColumn + 3) = .Worksheets(i).Cells(3, 4).Value
-                'ƒgƒ“””»’è
+                'ãƒˆãƒ³æ•°åˆ¤å®š
                 For j = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(14, j).Value = "" Then
                         Tonsu = .Worksheets(i).Cells(14, j).Value
@@ -98,7 +98,7 @@ EndLoop2:
                     'GoTo EndLoop
                 Next
 EndLoop3:
-                '‘D‘Ì‚Ì’·‚³*•*[‚³”»’è
+                'èˆ¹ä½“ã®é•·ã•*å¹…*æ·±ã•åˆ¤å®š
                 For j = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(15, j).Value = "" Then
                         Nagasa = .Worksheets(i).Cells(15, j).Value
@@ -108,7 +108,7 @@ EndLoop3:
                     'GoTo EndLoop
                 Next
 EndLoop4:
-                '”n—Í””»’è
+                'é¦¬åŠ›æ•°åˆ¤å®š
                 For j = 15 To 3 Step -1
                     If Not .Worksheets(i).Cells(22, j).Value = "" Then
                         Bariki = .Worksheets(i).Cells(22, j).Value
@@ -118,8 +118,8 @@ EndLoop4:
                     'GoTo EndLoop
                 Next
 EndLoop5:
-                'Sh1.Cells(iRow, iColumn + 7) = Worksheets(i).Cells(14, 3).Value  'Ÿ‰ñŒŸ”FŠú“ú
-                'Ÿ‰ñŒŸ”FŠú“ú”»’è(********‚à‚Á‚Æ‚¢‚¢•û–@‚ ‚é‚¾‚ë‚¤***)
+                'Sh1.Cells(iRow, iColumn + 7) = Worksheets(i).Cells(14, 3).Value  'æ¬¡å›æ¤œèªæœŸæ—¥
+                'æ¬¡å›æ¤œèªæœŸæ—¥åˆ¤å®š(********ã‚‚ã£ã¨ã„ã„æ–¹æ³•ã‚ã‚‹ã ã‚ã†***)
                 For j = 7 To 1 Step -1
                     For k = 36 To 31 Step -1
                         If Not .Worksheets(i).Cells(k, 2 * j + 1).Value = "" Then
@@ -131,23 +131,23 @@ EndLoop5:
                     Next
                 Next
 EndLoop6:
-                'ƒŠƒ“ƒN‚Ì•¶š‚Ì‘å‚«‚³AƒtƒHƒ“ƒg‚ğİ’è
+                'ãƒªãƒ³ã‚¯ã®æ–‡å­—ã®å¤§ãã•ã€ãƒ•ã‚©ãƒ³ãƒˆã‚’è¨­å®š
                 Sh1.Cells(iRow, iColumn).Font.Size = 12
-                Sh1.Cells(iRow, iColumn).Font.Name = "‚l‚r –¾’©"
+                Sh1.Cells(iRow, iColumn).Font.Name = "ï¼­ï¼³ æ˜æœ"
                 Sh1.Cells(iRow, iColumn).Font.Bold = True
-                'Ÿ‚Ìs‚Ö
+                'æ¬¡ã®è¡Œã¸
                 iRow = iRow + 1
             End If
         Next i
-        Sh1.Range("B1").Value = "ˆê——•\"
-        Sh1.Range("B3").Value = "‹™‘D“o˜^”Ô†"
-        Sh1.Range("C3").Value = "‘D–¼"
-        Sh1.Range("D3").Value = "‘g‡ˆõ–¼"
-        Sh1.Range("E3").Value = "’n‹æ"
-        Sh1.Range("F3").Value = "ƒgƒ“”"
-        Sh1.Range("G3").Value = "‘D‘Ì‚Ì’·‚³*•*[‚³"
-        Sh1.Range("H3").Value = "”n—Í”"
-        Sh1.Range("I3").Value = "Ÿ‰ñŒŸ”FŠú“ú"
+        Sh1.Range("B1").Value = "ä¸€è¦§è¡¨"
+        Sh1.Range("B3").Value = "æ¼èˆ¹ç™»éŒ²ç•ªå·"
+        Sh1.Range("C3").Value = "èˆ¹å"
+        Sh1.Range("D3").Value = "çµ„åˆå“¡å"
+        Sh1.Range("E3").Value = "åœ°åŒº"
+        Sh1.Range("F3").Value = "ãƒˆãƒ³æ•°"
+        Sh1.Range("G3").Value = "èˆ¹ä½“ã®é•·ã•*å¹…*æ·±ã•"
+        Sh1.Range("H3").Value = "é¦¬åŠ›æ•°"
+        Sh1.Range("I3").Value = "æ¬¡å›æ¤œèªæœŸæ—¥"
     End With
     
 End Sub
