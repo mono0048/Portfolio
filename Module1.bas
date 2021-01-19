@@ -1,66 +1,66 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 
-Sub ‘g‡ˆõ–¼•ë‘ä’ ƒV[ƒg–¼æ“¾()
+Sub çµ„åˆå“¡åç°¿å°å¸³ã‚·ãƒ¼ãƒˆåå–å¾—()
 '**********
 '2020/08/26
-'X
-'Œœ”O–€
-'o‘‹à‚ª–¢‹L“ü‚Ìê‡A‘S‘Ìƒy[ƒW‚ª•ö‚ê‚é
-'Šeƒy[ƒW‚É‰e‹¿‚Í–³‚¢
-'’Šo‚µ‚½‚­‚È‚¢ƒV[ƒg‚ª‚ ‚éê‡A‚Ç‚¤‚µ‚æ‚¤‚©
+'æ£®
+'æ‡¸å¿µäº‹é …
+'å‡ºè³‡é‡‘ãŒæœªè¨˜å…¥ã®å ´åˆã€å…¨ä½“ãƒšãƒ¼ã‚¸ãŒå´©ã‚Œã‚‹
+'å„ãƒšãƒ¼ã‚¸ã«å½±éŸ¿ã¯ç„¡ã„
+'æŠ½å‡ºã—ãŸããªã„ã‚·ãƒ¼ãƒˆãŒã‚ã‚‹å ´åˆã€ã©ã†ã—ã‚ˆã†ã‹
 '**********
 Dim mysheet As Worksheet
 Application.ScreenUpdating = False
     On Error Resume Next
     For Each mysheet In Worksheets
-        If InStr(mysheet.Name, "‘S‘Ì") = 0 Then
+        If InStr(mysheet.Name, "å…¨ä½“") = 0 Then
             mysheet.Name = mysheet.Range("C2").Value
         End If
     Next
     
-    Call ƒV[ƒg–ÚŸ
+    Call ã‚·ãƒ¼ãƒˆç›®æ¬¡
 Application.ScreenUpdating = True
 End Sub
 
-Sub ƒV[ƒg–ÚŸ()
+Sub ã‚·ãƒ¼ãƒˆç›®æ¬¡()
   
     Dim i As Integer
     Dim iRow As Integer
     Dim iColumn As Integer
     Dim sName, Kumimei As String
     Dim Sh1 As Worksheet
-    Set Sh1 = Worksheets("‘S‘Ì")
+    Set Sh1 = Worksheets("å…¨ä½“")
     
     Sh1.Range("A1").Select
-    '–ÚŸƒV[ƒg‚Ìİ’è“à—e‚ğƒNƒŠƒA
+    'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®è¨­å®šå†…å®¹ã‚’ã‚¯ãƒªã‚¢
     Sh1.Range(Sh1.Cells(3, 3), Sh1.Cells(Rows.Count, 7).End(xlUp)).ClearContents
     Sh1.Range(Sh1.Cells(3, 3), Sh1.Cells(Rows.Count, 7).End(xlUp)).Hyperlinks.Delete
       
-    '–ÚŸŠJns”i–{—á‚Í3s–Ú‚©‚ç–ÚŸ‚ªì‚ç‚ê‚éj
+    'ç›®æ¬¡é–‹å§‹è¡Œæ•°ï¼ˆæœ¬ä¾‹ã¯3è¡Œç›®ã‹ã‚‰ç›®æ¬¡ãŒä½œã‚‰ã‚Œã‚‹ï¼‰
     iRow = 3
-    '–ÚŸ‚ğì¬‚·‚é—ñ”i–{—á‚Í3—ñ–ÚiC—ñj‚É–ÚŸ‚ªì‚ç‚ê‚éj
+    'ç›®æ¬¡ã‚’ä½œæˆã™ã‚‹åˆ—æ•°ï¼ˆæœ¬ä¾‹ã¯3åˆ—ç›®ï¼ˆCåˆ—ï¼‰ã«ç›®æ¬¡ãŒä½œã‚‰ã‚Œã‚‹ï¼‰
     iColumn = 3
   
-    'ƒ[ƒNƒV[ƒg‚Ì”•ªA‰º‹Lˆ—‚ğŒJ‚è•Ô‚·
+    'ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã®æ•°åˆ†ã€ä¸‹è¨˜å‡¦ç†ã‚’ç¹°ã‚Šè¿”ã™
     For i = 2 To Worksheets.Count Step 1
-        '”ñ•\¦‚Æ‚È‚Á‚Ä‚¢‚éƒ[ƒNƒV[ƒg‚Í–ÚŸì¬‘ÎÛŠO‚Æ‚·‚é
+        'éè¡¨ç¤ºã¨ãªã£ã¦ã„ã‚‹ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã¯ç›®æ¬¡ä½œæˆå¯¾è±¡å¤–ã¨ã™ã‚‹
         If Worksheets(i).Visible = xlSheetVisible Then
-            '‘g‡ˆõ•ÊŠ—L‘Dƒtƒ@ƒCƒ‹‚Ö‚ÌƒnƒCƒp[ƒŠƒ“ƒN‚ğİ’u
+            'çµ„åˆå“¡åˆ¥æ‰€æœ‰èˆ¹ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®ãƒã‚¤ãƒ‘ãƒ¼ãƒªãƒ³ã‚¯ã‚’è¨­ç½®
             Kumimei = "'" & Worksheets(i).Cells(2, 3).Text & "'"
-            Worksheets(i).Hyperlinks.Add Anchor:=Worksheets(i).Cells(4, 10), Address:="\\192.168.10.252\share\ƒf[ƒ^•ÛŠÇ(“ŒRj\ƒeƒXƒg\‘g‡ˆõ•ÊŠ—L‘D.xlsm", SubAddress:=Kumimei & "!A1", TextToDisplay:="‹™‘D“o˜^", ScreenTip:=Worksheets(i).Cells(4, 10).Text
-            'ƒ[ƒNƒV[ƒg–¼‚ğŠi”[
+            Worksheets(i).Hyperlinks.Add Anchor:=Worksheets(i).Cells(4, 10), Address:="\\çµ„åˆå“¡åˆ¥æ‰€æœ‰èˆ¹.xlsm", SubAddress:=Kumimei & "!A1", TextToDisplay:="æ¼èˆ¹ç™»éŒ²", ScreenTip:=Worksheets(i).Cells(4, 10).Text
+            'ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆåã‚’æ ¼ç´
             sName = "'" & Worksheets(i).Name & "'"
-            '–ÚŸƒV[ƒg‚Ì‘ÎÛƒZƒ‹‚ÉƒnƒCƒp[ƒŠƒ“ƒN‚ğİ’èi–ÚŸì¬‘ÎÛƒ[ƒNƒV[ƒg‚ÌA1ƒZƒ‹‚Ö‚ÌƒŠƒ“ƒN
+            'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®å¯¾è±¡ã‚»ãƒ«ã«ãƒã‚¤ãƒ‘ãƒ¼ãƒªãƒ³ã‚¯ã‚’è¨­å®šï¼ˆç›®æ¬¡ä½œæˆå¯¾è±¡ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã®A1ã‚»ãƒ«ã¸ã®ãƒªãƒ³ã‚¯
             Sh1.Hyperlinks.Add Anchor:=Sh1.Cells(iRow, iColumn), Address:="", SubAddress:=sName & "!A1", ScreenTip:=Worksheets(i).Name
-            '–ÚŸƒV[ƒg‚Ì‘ÎÛƒZƒ‹‚ÉƒV[ƒg–¼‚ğİ’è
+            'ç›®æ¬¡ã‚·ãƒ¼ãƒˆã®å¯¾è±¡ã‚»ãƒ«ã«ã‚·ãƒ¼ãƒˆåã‚’è¨­å®š
             Sh1.Cells(iRow, iColumn) = Worksheets(i).Name
-            '‘S‘ÌƒV[ƒg‚ÉZŠA¶”NŒ“úA’n‹æ–¼Ao‘‹à‚ğ“]‹L
+            'å…¨ä½“ã‚·ãƒ¼ãƒˆã«ä½æ‰€ã€ç”Ÿå¹´æœˆæ—¥ã€åœ°åŒºåã€å‡ºè³‡é‡‘ã‚’è»¢è¨˜
             Sh1.Cells(iRow, iColumn + 1) = Worksheets(i).Cells(2, 5).Value
             Sh1.Cells(iRow, iColumn + 2) = Worksheets(i).Cells(2, 9).Value
             Sh1.Cells(iRow, iColumn + 3) = Worksheets(i).Cells(3, 9).Value
             Sh1.Cells(iRow, iColumn + 4) = Worksheets(i).Cells(28, 8).Value
-              '‘Šiî•ñ’Ç‰Á
+              'è³‡æ ¼æƒ…å ±è¿½åŠ 
             If Not Worksheets(i).Cells(6, 7).Value = "" Then
                 Sh1.Cells(iRow, iColumn + 5) = Worksheets(i).Cells(6, 7).Value
             Else
@@ -88,19 +88,19 @@ Sub ƒV[ƒg–ÚŸ()
             End If
 
   
-           'ƒŠƒ“ƒN‚Ì•¶š‚Ì‘å‚«‚³AƒtƒHƒ“ƒg‚ğİ’è
+           'ãƒªãƒ³ã‚¯ã®æ–‡å­—ã®å¤§ãã•ã€ãƒ•ã‚©ãƒ³ãƒˆã‚’è¨­å®š
             Sh1.Cells(iRow, iColumn).Font.Size = 12
-            Sh1.Cells(iRow, iColumn).Font.Name = "‚l‚r –¾’©"
+            Sh1.Cells(iRow, iColumn).Font.Name = "ï¼­ï¼³ æ˜æœ"
             Sh1.Cells(iRow, iColumn).Font.Bold = True
   
-            'Ÿ‚Ìs‚Ö
+            'æ¬¡ã®è¡Œã¸
             iRow = iRow + 1
         End If
     Next i
-            Sh1.Range("B2").Value = "”Ô†"
-            Sh1.Range("C2").Value = "‘g‡ˆõ–¼"
-            Sh1.Range("D2").Value = "ZŠ"
-            Sh1.Range("E2").Value = "¶”NŒ“ú"
-            Sh1.Range("F2").Value = "’n‹æ–¼"
-            Sh1.Range("G2").Value = "o‘‹à"
+            Sh1.Range("B2").Value = "ç•ªå·"
+            Sh1.Range("C2").Value = "çµ„åˆå“¡å"
+            Sh1.Range("D2").Value = "ä½æ‰€"
+            Sh1.Range("E2").Value = "ç”Ÿå¹´æœˆæ—¥"
+            Sh1.Range("F2").Value = "åœ°åŒºå"
+            Sh1.Range("G2").Value = "å‡ºè³‡é‡‘"
 End Sub
