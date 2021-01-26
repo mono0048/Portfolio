@@ -1,20 +1,20 @@
 Attribute VB_Name = "Module21"
 Option Explicit
-Sub ƒOƒ‰ƒf[ƒVƒ‡ƒ“ƒ‚ƒWƒ…[ƒ‹‚©‚Á‚±‚©‚è()
+Sub ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‹ã£ã“ã‹ã‚Š()
 
 Dim mysheet As Worksheet
 
     Application.ScreenUpdating = False
     For Each mysheet In Worksheets
-        If InStr(mysheet.Name, "‘S‘Ì") = 0 Then
+        If InStr(mysheet.Name, "å…¨ä½“") = 0 Then
             With mysheet.Range("C2").Interior
-                'üŒ`ƒOƒ‰ƒf[ƒVƒ‡ƒ“
+                'ç·šå½¢ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³
                 .Pattern = xlPatternLinearGradient
-                'F‚ª•Ï‰»‚·‚é•ûŒü‚ÌŠp“x‚ğ90“x‚Éİ’è
+                'è‰²ãŒå¤‰åŒ–ã™ã‚‹æ–¹å‘ã®è§’åº¦ã‚’90åº¦ã«è¨­å®š
                 .Gradient.Degree = 0
-                'Fî•ñ‚ğƒNƒŠƒA
+                'è‰²æƒ…å ±ã‚’ã‚¯ãƒªã‚¢
                 .Gradient.ColorStops.Clear
-                'ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚Åg—p‚·‚éF‚ğİ’è
+                'ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã§ä½¿ç”¨ã™ã‚‹è‰²ã‚’è¨­å®š
                 .Gradient.ColorStops.Add(0).Color = 16777215
                 .Gradient.ColorStops.Add(1).Color = 14461583
             End With
@@ -24,7 +24,8 @@ Dim mysheet As Worksheet
 
 End Sub
 
-Sub Fî•ñæ“¾()
+
+Sub è‰²æƒ…å ±å–å¾—()
 
 Dim myColor As ColorStop
 
@@ -34,12 +35,12 @@ Dim myColor As ColorStop
     
 End Sub
 
-Sub Œrüİ’è()
+Sub ç½«ç·šè¨­å®š()
 
 Dim mysheet As Worksheet
 
     For Each mysheet In Worksheets
-        If InStr(mysheet.Name, "‘S‘Ì") = 0 Then
+        If InStr(mysheet.Name, "å…¨ä½“") = 0 Then
             With mysheet.Range("C2")
                 .Borders(xlEdgeTop).LineStyle = xlContinuous
                 .Borders(xlEdgeTop).Weight = xlMedium
