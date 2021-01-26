@@ -2,14 +2,14 @@ Attribute VB_Name = "漁船原簿整頓"
 Option Explicit
 
 Sub 漁船原簿シート名取得()
-'**********
+'***********
 '2020/10/08
 '森
 '懸念事項
 'どっかの項目が未記入の場合、全体ページが崩れるかも
 '各ページに影響は無い
 '抽出したくないシートがある場合、どうしようか
-'**********
+'***********
 Dim mysheet As Worksheet
     Application.ScreenUpdating = False
     On Error Resume Next
