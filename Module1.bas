@@ -2,7 +2,7 @@ Attribute VB_Name = "Module1"
 Option Explicit
 
 Sub 組合員名簿台帳シート名取得()
-'**********
+'***********
 '2020/08/26
 '森
 '懸念事項
