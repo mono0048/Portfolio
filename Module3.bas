@@ -1,18 +1,18 @@
 Attribute VB_Name = "Module3"
 Option Explicit
 
-Sub ŠúŠÔWŒv()
-'*******************************************************************************************************************************
-'ƒZ[ƒtƒeƒBƒlƒbƒgì¬—lŽ®
-'1. w”ƒƒVƒXƒeƒ€‚æ‚èƒgƒ‰ƒ“ŽQÆ
-'2.ƒI[ƒgƒtƒBƒ‹ƒ^‚É‚ÄŽw’èŠúŠÔ“à‚Ì”R–û—Þ‚ð’Šo
-'3.·‚µž‚Ýˆóü‚Ì‚½‚ß‚É•\‰»
-'4.•Â‚¶‚ÄAƒ[ƒh‚©‚ç·‚µž‚Ýˆóü
-'***Œ»óAƒgƒ‰ƒ“‚ÌŽ©“®XV‚ª•sˆÀB‚Ü‚½ƒI[ƒgƒtƒBƒ‹ƒ^‚àŽè“®‚Å’š”J‚ÉB•\‚à‹ó—“‚ª‚È‚¢‚©—vƒ`ƒFƒbƒNB©SQL‚É‚Ä‘Î‰žA“®ì—ÇDB
-'2020/06/10ì¬
-'2020/10/12XV(ŽÀ–±Žg—pŠJŽn)
-'2020/10/14XV(SQL‘Î‰žBŽQlƒV[ƒgíœ)ƒR[ƒh‚ª”ÏŽG‚·‚¬‚é‚©‚çŽè’¼‚µ‚»‚Ì‚¤‚¿
-'*******************************************************************************************************************************
+Sub æœŸé–“é›†è¨ˆ()
+'********************************************************************************************************************************
+'ã‚»ãƒ¼ãƒ•ãƒ†ã‚£ãƒãƒƒãƒˆä½œæˆæ§˜å¼
+'1. è³¼è²·ã‚·ã‚¹ãƒ†ãƒ ã‚ˆã‚Šãƒˆãƒ©ãƒ³å‚ç…§
+'2.ã‚ªãƒ¼ãƒˆãƒ•ã‚£ãƒ«ã‚¿ã«ã¦æŒ‡å®šæœŸé–“å†…ã®ç‡ƒæ²¹é¡žã‚’æŠ½å‡º
+'3.å·®ã—è¾¼ã¿å°åˆ·ã®ãŸã‚ã«è¡¨åŒ–
+'4.é–‰ã˜ã¦ã€ãƒ¯ãƒ¼ãƒ‰ã‹ã‚‰å·®ã—è¾¼ã¿å°åˆ·
+'***ç¾çŠ¶ã€ãƒˆãƒ©ãƒ³ã®è‡ªå‹•æ›´æ–°ãŒä¸å®‰ã€‚ã¾ãŸã‚ªãƒ¼ãƒˆãƒ•ã‚£ãƒ«ã‚¿ã‚‚æ‰‹å‹•ã§ä¸å¯§ã«ã€‚è¡¨ã‚‚ç©ºæ¬„ãŒãªã„ã‹è¦ãƒã‚§ãƒƒã‚¯ã€‚â†SQLã«ã¦å¯¾å¿œã€å‹•ä½œè‰¯å¥½ã€‚
+'2020/06/10ä½œæˆ
+'2020/10/12æ›´æ–°(å®Ÿå‹™ä½¿ç”¨é–‹å§‹)
+'2020/10/14æ›´æ–°(SQLå¯¾å¿œã€‚å‚è€ƒã‚·ãƒ¼ãƒˆå‰Šé™¤)ã‚³ãƒ¼ãƒ‰ãŒç…©é›‘ã™ãŽã‚‹ã‹ã‚‰æ‰‹ç›´ã—ãã®ã†ã¡
+'********************************************************************************************************************************
     
     Dim MaxC1, MaxC2, cnt, yoko, i, j, k As Long
     Dim Sh1, Sh2, Sh3, Sh4 As Worksheet
@@ -20,30 +20,30 @@ Sub ŠúŠÔWŒv()
     Dim Kazu As Double
     Dim d1, d2, d3 As Date
     
-    '---ƒ[ƒNƒV[ƒg‚ðéŒ¾---
-    Set Sh1 = Worksheets("‹L“ü")
-    Set Sh2 = Worksheets("SN‰Á“üŽÒˆê——")
+    '---ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆã‚’å®£è¨€---
+    Set Sh1 = Worksheets("è¨˜å…¥")
+    Set Sh2 = Worksheets("SNåŠ å…¥è€…ä¸€è¦§")
     Set Sh3 = Worksheets("DB")
-'    Set Sh4 = Worksheets("ŽQl")
+'    Set Sh4 = Worksheets("å‚è€ƒ")
     
     Application.ScreenUpdating = False
     Application.Calculation = xlCalculationManual
     
-    Call DBƒV[ƒg®—
+    Call DBã‚·ãƒ¼ãƒˆæ•´ç†
     
-     '---ŽQlƒV[ƒg‚ðŒŸõ---
-    MaxC1 = Sh3.Range("A65536").End(xlUp).Row '-----ŽQlƒV[ƒg‚ÌÅIs
-    MaxC2 = Sh2.Range("A65536").End(xlUp).Row '-----SN‰Á“üŽÒˆê——ƒV[ƒg‚ÌÅIs
-    cnt = Sh2.Range("XFD2").End(xlToLeft).Column '-----SN‰Á“üŽÒˆê——ƒV[ƒg‚ÌÅI—ñ
+     '---å‚è€ƒã‚·ãƒ¼ãƒˆã‚’æ¤œç´¢---
+    MaxC1 = Sh3.Range("A65536").End(xlUp).Row '-----å‚è€ƒã‚·ãƒ¼ãƒˆã®æœ€çµ‚è¡Œ
+    MaxC2 = Sh2.Range("A65536").End(xlUp).Row '-----SNåŠ å…¥è€…ä¸€è¦§ã‚·ãƒ¼ãƒˆã®æœ€çµ‚è¡Œ
+    cnt = Sh2.Range("XFD2").End(xlToLeft).Column '-----SNåŠ å…¥è€…ä¸€è¦§ã‚·ãƒ¼ãƒˆã®æœ€çµ‚åˆ—
     
-    '---WŒvŠJŽn“ú‚ÆWŒvI—¹“ú‚ðŽw’è---
+    '---é›†è¨ˆé–‹å§‹æ—¥ã¨é›†è¨ˆçµ‚äº†æ—¥ã‚’æŒ‡å®š---
     If Sh1.Range("C5").Value = "1" Then
         d1 = "2020/04/01"
         d2 = "2020/06/30"
 '        Sh3.Range("A1").AutoFilter Field:=3, Criteria1:=">=2020/04/01", Operator:=xlAnd, Criteria2:="<=2020/06/30"
 '        Sh3.Range("A1").AutoFilter Field:=6, Criteria1:=1
 '        Sh3.Range("A1").AutoFilter Field:=2, Criteria1:=11
-    'ƒ`ƒFƒbƒNƒ}[ƒNˆ—
+    'ãƒã‚§ãƒƒã‚¯ãƒžãƒ¼ã‚¯å‡¦ç†
         Sh2.Range(Sh2.Range("Q3"), Sh2.Cells(MaxC2, 20)).Value = ""
         Sh2.Range(Sh2.Range("Q3"), Sh2.Cells(MaxC2, 17)).Value = ChrW(10003)
     ElseIf Sh1.Range("C5").Value = "2" Then
@@ -52,7 +52,7 @@ Sub ŠúŠÔWŒv()
 '        Sh3.Range("A1").AutoFilter Field:=3, Criteria1:=">=2020/07/01", Operator:=xlAnd, Criteria2:="<=2020/09/30"
 '        Sh3.Range("A1").AutoFilter Field:=6, Criteria1:=1
 '        Sh3.Range("A1").AutoFilter Field:=2, Criteria1:=11
-    'ƒ`ƒFƒbƒNƒ}[ƒNˆ—
+    'ãƒã‚§ãƒƒã‚¯ãƒžãƒ¼ã‚¯å‡¦ç†
         Sh2.Range(Sh2.Range("Q3"), Sh2.Cells(MaxC2, 20)).Value = ""
         Sh2.Range(Sh2.Range("R3"), Sh2.Cells(MaxC2, 18)).Value = ChrW(10003)
     ElseIf Sh1.Range("C5").Value = "3" Then
@@ -61,7 +61,7 @@ Sub ŠúŠÔWŒv()
 '        Sh3.Range("A1").AutoFilter Field:=3, Criteria1:=">=2020/10/01", Operator:=xlAnd, Criteria2:="<=2020/12/31"
 '        Sh3.Range("A1").AutoFilter Field:=6, Criteria1:=1
 '        Sh3.Range("A1").AutoFilter Field:=2, Criteria1:=11
-    'ƒ`ƒFƒbƒNƒ}[ƒNˆ—
+    'ãƒã‚§ãƒƒã‚¯ãƒžãƒ¼ã‚¯å‡¦ç†
         Sh2.Range(Sh2.Range("Q3"), Sh2.Cells(MaxC2, 20)).Value = ""
         Sh2.Range(Sh2.Range("S3"), Sh2.Cells(MaxC2, 19)).Value = ChrW(10003)
     ElseIf Sh1.Range("C5").Value = "4" Then
@@ -70,30 +70,30 @@ Sub ŠúŠÔWŒv()
 '        Sh3.Range("A1").AutoFilter Field:=3, Criteria1:=">=2021/01/01", Operator:=xlAnd, Criteria2:="<=2021/03/31"
 '        Sh3.Range("A1").AutoFilter Field:=6, Criteria1:=1
 '        Sh3.Range("A1").AutoFilter Field:=2, Criteria1:=11
-    'ƒ`ƒFƒbƒNƒ}[ƒNˆ—
+    'ãƒã‚§ãƒƒã‚¯ãƒžãƒ¼ã‚¯å‡¦ç†
         Sh2.Range(Sh2.Range("Q3"), Sh2.Cells(MaxC2, 20)).Value = ""
         Sh2.Range(Sh2.Range("T3"), Sh2.Cells(MaxC2, 20)).Value = ChrW(10003)
-    Else: MsgBox "”¼ŠúŽw’è‚ªŠÔˆá‚Á‚Ä‚¢‚Ü‚·B"
+    Else: MsgBox "åŠæœŸæŒ‡å®šãŒé–“é•ã£ã¦ã„ã¾ã™ã€‚"
     End If
 '
-'    '-----ƒI[ƒgƒtƒBƒ‹ƒ^Œãƒf[ƒ^‚ðƒRƒsƒy
+'    '-----ã‚ªãƒ¼ãƒˆãƒ•ã‚£ãƒ«ã‚¿å¾Œãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒš
 '    Sh3.Range("A1").CurrentRegion.Copy Sh4.Range("A1")
-'    '-----ŽQlƒV[ƒg‚ÌƒR[ƒh‚ð•¶Žš—ñ‚É•ÏŠ·‚·‚é
+'    '-----å‚è€ƒã‚·ãƒ¼ãƒˆã®ã‚³ãƒ¼ãƒ‰ã‚’æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 '    Sh4.Range("D:D").NumberFormatLocal = "@"
-    Sh3.Range("F:F").NumberFormatLocal = "@" '©SQL–½—ß•¶‘¤‚ÅFORMAT‚µ‚å‚è‚É‚·‚é
-     '---ŽQlƒV[ƒg‚ðŒŸõ---
-    MaxC1 = Sh3.Range("A65536").End(xlUp).Row '-----ŽQlƒV[ƒg‚ÌÅIs
-    MaxC2 = Sh2.Range("A65536").End(xlUp).Row '-----SN‰Á“üŽÒˆê——ƒV[ƒg‚ÌÅIs
-    cnt = Sh2.Range("XFD2").End(xlToLeft).Column '-----SN‰Á“üŽÒˆê——ƒV[ƒg‚ÌÅI—ñ
+    Sh3.Range("F:F").NumberFormatLocal = "@" 'â†SQLå‘½ä»¤æ–‡å´ã§FORMATã—ã‚‡ã‚Šã«ã™ã‚‹
+     '---å‚è€ƒã‚·ãƒ¼ãƒˆã‚’æ¤œç´¢---
+    MaxC1 = Sh3.Range("A65536").End(xlUp).Row '-----å‚è€ƒã‚·ãƒ¼ãƒˆã®æœ€çµ‚è¡Œ
+    MaxC2 = Sh2.Range("A65536").End(xlUp).Row '-----SNåŠ å…¥è€…ä¸€è¦§ã‚·ãƒ¼ãƒˆã®æœ€çµ‚è¡Œ
+    cnt = Sh2.Range("XFD2").End(xlToLeft).Column '-----SNåŠ å…¥è€…ä¸€è¦§ã‚·ãƒ¼ãƒˆã®æœ€çµ‚åˆ—
     
     For k = 3 To MaxC2
         Cord = Sh2.Range("C" & k).Text
-    '---Æ‡‚µ‚½‚¢ðŒ‚Åƒf[ƒ^ƒx[ƒX‚ðŒŸõ---
+    '---ç…§åˆã—ãŸã„æ¡ä»¶ã§ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’æ¤œç´¢---
         For j = 0 To cnt - 25
             Kazu = 0
             Hinmei = Sh2.Range("W2").Offset(0, j + 1)
             For i = 2 To MaxC1
-                d3 = Sh3.Range("B" & i).Value '-----ŽQlƒV[ƒg‚Ì“ú•t—ñ
+                d3 = Sh3.Range("B" & i).Value '-----å‚è€ƒã‚·ãƒ¼ãƒˆã®æ—¥ä»˜åˆ—
                 If d3 >= d1 And d3 <= d2 Then
                     If Sh3.Range("C" & i).Text = Cord Then
                         If Sh3.Range("F" & i).Text = Hinmei Then
@@ -102,31 +102,31 @@ Sub ŠúŠÔWŒv()
                     End If
                 End If
             Next
-    '---SN‰Á“üŽÒˆê——ƒV[ƒg‚Ì•\‚Éo—Í---
+    '---SNåŠ å…¥è€…ä¸€è¦§ã‚·ãƒ¼ãƒˆã®è¡¨ã«å‡ºåŠ›---
             Sh2.Range("W" & k).Offset(0, j + 1).Value = Kazu
         Next
     Next
-    '-----ƒI[ƒgƒtƒBƒ‹ƒ^[‰ðœ
+    '-----ã‚ªãƒ¼ãƒˆãƒ•ã‚£ãƒ«ã‚¿ãƒ¼è§£é™¤
 '    Sh3.Range("A1").AutoFilter
     Application.Calculation = xlCalculationAutomatic
     Application.ScreenUpdating = True
 End Sub
 
-Sub DBƒV[ƒg®—()
+Sub DBã‚·ãƒ¼ãƒˆæ•´ç†()
 
-Dim ƒRƒlƒNƒVƒ‡ƒ“ As New ADODB.Connection
-Dim ƒŒƒR[ƒh As New ADODB.Recordset
-Dim ƒRƒ}ƒ“ƒh As New ADODB.Command
+Dim ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ As New ADODB.Connection
+Dim ãƒ¬ã‚³ãƒ¼ãƒ‰ As New ADODB.Recordset
+Dim ã‚³ãƒžãƒ³ãƒ‰ As New ADODB.Command
 Dim d1, d2 As Date
 Dim Sh1, Sh4 As Worksheet
-Set Sh1 = Worksheets("‹L“ü")
+Set Sh1 = Worksheets("è¨˜å…¥")
 Set Sh4 = Worksheets("DB")
 
-ƒRƒlƒNƒVƒ‡ƒ“.Open ConnectionString:= _
+ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³.Open ConnectionString:= _
 "Provider=Microsoft.ACE.OLEDB.12.0;" & _
 "Data Source=\\192.168.10.250\ackobai\kobai.mdb;"
 
-'ŠúŠÔ“K—p”ÍˆÍ
+'æœŸé–“é©ç”¨ç¯„å›²
 If Sh1.Range("C5").Value = "1" Then
         d1 = "2020/04/01"
         d2 = "2020/06/30"
@@ -141,24 +141,24 @@ ElseIf Sh1.Range("C5").Value = "4" Then
         d2 = "2021/03/31"
 End If
 
-With ƒRƒ}ƒ“ƒh
-    .ActiveConnection = ƒRƒlƒNƒVƒ‡ƒ“
+With ã‚³ãƒžãƒ³ãƒ‰
+    .ActiveConnection = ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³
     .CommandText = _
-    "SELECT ó‘Ô‹æ•ª,“ú@@•t,FORMAT(ƒR[ƒh,'@'),ƒR[ƒh–¼@Š¿Žš,•ª—ÞƒR[ƒh,¤•iƒR[ƒh,¤•i–¼@Š¿Žš,”@@—Ê FROM KT01 WHERE ó‘Ô‹æ•ª = 0 and “ú@@•t BETWEEN " & "#" & d1 & "#" & " And " & "#" & d2 & "#" & " and ¤•iƒR[ƒh=1001;"
-    Set ƒŒƒR[ƒh = .Execute
+    "SELECT çŠ¶æ…‹åŒºåˆ†,æ—¥ã€€ã€€ä»˜,FORMAT(ã‚³ãƒ¼ãƒ‰,'@'),ã‚³ãƒ¼ãƒ‰åã€€æ¼¢å­—,åˆ†é¡žã‚³ãƒ¼ãƒ‰,å•†å“ã‚³ãƒ¼ãƒ‰,å•†å“åã€€æ¼¢å­—,æ•°ã€€ã€€é‡ FROM KT01 WHERE çŠ¶æ…‹åŒºåˆ† = 0 and æ—¥ã€€ã€€ä»˜ BETWEEN " & "#" & d1 & "#" & " And " & "#" & d2 & "#" & " and å•†å“ã‚³ãƒ¼ãƒ‰=1001;"
+    Set ãƒ¬ã‚³ãƒ¼ãƒ‰ = .Execute
 End With
 Sh4.Cells.Delete
-Sh4.Range("A1").Value = "ó‘Ô‹æ•ª"
-Sh4.Range("B1").Value = "“ú@@•t"
-Sh4.Range("C1").Value = "ƒR[ƒh"
-Sh4.Range("D1").Value = "ƒR[ƒh–¼@Š¿Žš"
-Sh4.Range("E1").Value = "•ª—ÞƒR[ƒh"
-Sh4.Range("F1").Value = "¤•iƒR[ƒh"
-Sh4.Range("G1").Value = "¤•i–¼@Š¿Žš"
-Sh4.Range("H1").Value = "”@@—Ê"
+Sh4.Range("A1").Value = "çŠ¶æ…‹åŒºåˆ†"
+Sh4.Range("B1").Value = "æ—¥ã€€ã€€ä»˜"
+Sh4.Range("C1").Value = "ã‚³ãƒ¼ãƒ‰"
+Sh4.Range("D1").Value = "ã‚³ãƒ¼ãƒ‰åã€€æ¼¢å­—"
+Sh4.Range("E1").Value = "åˆ†é¡žã‚³ãƒ¼ãƒ‰"
+Sh4.Range("F1").Value = "å•†å“ã‚³ãƒ¼ãƒ‰"
+Sh4.Range("G1").Value = "å•†å“åã€€æ¼¢å­—"
+Sh4.Range("H1").Value = "æ•°ã€€ã€€é‡"
 
-Sh4.Range("A2").CopyFromRecordset Data:=ƒŒƒR[ƒh
-ƒŒƒR[ƒh.Close: Set ƒŒƒR[ƒh = Nothing
-ƒRƒlƒNƒVƒ‡ƒ“.Close: Set ƒRƒlƒNƒVƒ‡ƒ“ = Nothing
+Sh4.Range("A2").CopyFromRecordset Data:=ãƒ¬ã‚³ãƒ¼ãƒ‰
+ãƒ¬ã‚³ãƒ¼ãƒ‰.Close: Set ãƒ¬ã‚³ãƒ¼ãƒ‰ = Nothing
+ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³.Close: Set ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ = Nothing
 
 End Sub
